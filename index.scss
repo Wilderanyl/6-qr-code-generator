@@ -45,10 +45,10 @@ $doubleMarginTop: 40px;
 }
 
 @mixin inputStyle {
-    font-size: 17px;
-    padding: 10px;
-    border-radius: $raduis;
-    @include borderNoutline;
+  font-size: 17px;
+  padding: 10px;
+  border-radius: $raduis;
+  @include borderNoutline;
 }
 
 * {
@@ -103,7 +103,6 @@ body {
         background-color: $bgColorH;
         padding: 5px 10px;
         border-radius: $raduis;
-        // box-shadow: $shadowY;
         p {
           color: $colorH;
           font-weight: bold;
@@ -128,11 +127,36 @@ body {
         margin-top: $marginTop * 2;
         padding: 10px;
         color: $bgColorH;
-        input {
-          @include inputStyle;
+        form {
+          width: 100%;
+          @include flexBetween;
+          input {
+            flex: 1;
+            @include inputStyle;
+          }
+          .errorInput {
+            border: 1px solid red;
+            animation: shake 0.2s linear 6;
+          }
+          button {
+            @include buttonStyle;
+          }
         }
-        button {
-          @include buttonStyle;
+        [data-text] {
+          font-size: 16px;
+          margin: $marginTop auto;
+          text-align: center;
+        }
+        .qr-container {
+          margin: $marginTop * 2 auto;
+          @include flexCenter;
+          display: none;
+          img {
+            padding: 10px;
+            background-color: white;
+            border-radius: $raduis;
+            border: 2px solid $bgColorH;
+          }
         }
       }
     }
@@ -146,5 +170,23 @@ body {
       text-decoration: none;
       color: gray;
     }
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(-2px);
+  }
+  50% {
+    transform: translate(0);
+  }
+  75% {
+    transform: translate(2px);
+  }
+  100% {
+    transform: translate(0);
   }
 }

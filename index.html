@@ -8,7 +8,7 @@
   </head>
   <body>
     <header class="header">
-        <p>We don't know enough but, we're satisfied with it.</p>
+      <p>We don't know enough but, we're satisfied with it.</p>
     </header>
     <div class="container">
       <div class="project-container">
@@ -20,8 +20,19 @@
           <h2>QR Code Generator</h2>
         </div>
         <div class="content">
-            <input type="text" placeholder="Enter anything...">
-            <button>Get your qr code</button>
+          <form id="form">
+            <input
+              type="text"
+              placeholder="Enter anything..."
+              id="input"
+              autocomplete="off"
+            />
+            <button id="btn" type="submit">Get now</button>
+          </form>
+          <p data-text></p>
+          <div class="qr-container" id="qr-container">
+            <img src="" alt="your qr code" id="qr-img" />
+          </div>
         </div>
       </div>
     </div>

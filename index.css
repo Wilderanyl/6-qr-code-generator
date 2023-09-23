@@ -82,14 +82,25 @@ body .container .project-container .content {
   padding: 10px;
   color: #f0dc4e;
 }
-body .container .project-container .content input {
+body .container .project-container .content form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .container .project-container .content form input {
+  flex: 1;
   font-size: 17px;
   padding: 10px;
   border-radius: 4px;
   border: none;
   outline: none;
 }
-body .container .project-container .content button {
+body .container .project-container .content form .errorInput {
+  border: 1px solid red;
+  animation: shake 0.1s linear 10;
+}
+body .container .project-container .content form button {
   font-size: 17px;
   padding: 10px;
   border-radius: 4px;
@@ -102,6 +113,24 @@ body .container .project-container .content button {
   cursor: pointer;
   transition: 0.5s;
 }
+body .container .project-container .content [data-text] {
+  font-size: 16px;
+  margin: 20px auto;
+  text-align: center;
+}
+body .container .project-container .content .qr-container {
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+body .container .project-container .content .qr-container img {
+  padding: 10px;
+  background-color: white;
+  border-radius: 4px;
+  border: 2px solid #f0dc4e;
+}
 body .footer {
   border-top: 1px solid #2e302c;
   text-align: center;
@@ -111,4 +140,22 @@ body .footer {
 body .footer a {
   text-decoration: none;
   color: gray;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(-2px);
+  }
+  50% {
+    transform: translate(0);
+  }
+  75% {
+    transform: translate(2px);
+  }
+  100% {
+    transform: translate(0);
+  }
 }/*# sourceMappingURL=index.css.map */
